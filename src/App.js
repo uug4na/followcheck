@@ -1,41 +1,48 @@
 import Header from "./components/header";
-import hoshino from "./hoshino.svg";
 import "./index.css";
-import Contact from "./pages/Contact"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { useEffect } from "react";
+import insta from "./insta.svg";
 function App() {
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="/contact" element={<Contact />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>;
+  useEffect(() => {
+    document.title = "FollowCheck";
+  }, []);
   return (
     <div>
       <Header />
-      <div className="flex bg-black">
-        <div className="w-[50%] max-h-[60%]">
-          <img src={hoshino} className="ml-20" alt="logo" />
-        </div>
-        <div className="w-[50%]">
-          <div>
-            <div class="max-w-md mt-10">
-              <input
-                placeholder="Username"
-                type="text"
-                id="large-input"
-                class="block p-4 usernameClass w-64"
-              />
+      <div className="flex flex-col bg-slate-900 h-screen">
+        <div className="flex flex-col items-center">
+          <div className="text-white font-mc tracking-widest text-lg mt-24">
+            Enter your username
+          </div>
+          <div className="flex items-center infoClass rounded-md">
+            <div className="w-6 h-6 mr-2 ml-2">
+              <img src={insta} alt="Instagram Logo" />
             </div>
-            <div class="max-w-md mt-10">
-              <input
-                placeholder="Username"
-                type="text"
-                id="large-input"
-                class="block p-4 infoClass w-64"
-              />
+            <input
+              placeholder="username"
+              type="text"
+              id="large-input"
+              className="block p-4 w-[55vh] placeholder-styles text-white font-mc inputClass outline-none border-none focus:border-none"
+            />
+          </div>
+          <div className="mt-6">
+            <div className="border-[3px] rounded-md w-[61vh] border-6 p-4 py-7 border-10 infoClass text-white opacity-80">
+              <div>
+                Та өөрийн “Instagram Username”-ийн оруулан таныг дагаж байгаа
+                болон буцаан дагаагүй хүмүүсийг ердөө 1K төгрөгөөр мэдэж болох
+                юм.
+              </div>
+              <li>
+                Таны хаяг нь “Public” тохиргоотой байх хэрэгтэйг анхааруулъя.
+              </li>
+              <li>
+                Та манай үйлчилгээг ашигласнаар таны хаягт ямар нэгэн асуудал,
+                аюул үүсэхгүй болно.
+              </li>
+              <br />
+              <li>
+                Манай үйлчилгээг сонгон үйлчлүүлж байгаа танд баярлалаа :)
+              </li>
             </div>
           </div>
         </div>
